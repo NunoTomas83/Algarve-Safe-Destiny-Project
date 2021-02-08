@@ -1,0 +1,21 @@
+1. Listar todos os temas num só idioma
+
+	Passo 1 - SELECT id FROM Temas
+	Passo 2 - SELECT id_conteudo FROM Conteudo_Temas WHERE (id_temas = id AND codigo_idioma = idioma atual)
+	Passo 3 - SELECT documento FROM Conteudo WHERE id = id_conteudo
+
+2. Listar os tópicos ligados a um tema específico num só idioma
+
+3. Listar os subtópicos ligados a um tópico específico num só idioma
+
+
+---------------------------------
+
+3 temas:
+1º Tema tem 3 topicos e 0 subtopicos
+2º Tema 1 topico e 0 subtopicos
+3º Tema 1 topico e 3 subtopicos
+
+-----------------------------
+
+Sql server 2008 r2

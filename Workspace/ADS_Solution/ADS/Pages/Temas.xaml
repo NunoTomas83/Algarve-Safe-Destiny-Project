@@ -1,0 +1,54 @@
+﻿<Page
+    x:Class="ADS.Pages.Temas"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ADS.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" >
+            <Border Height="50" Background="#3b5998">
+                <TextBlock x:Name="AppTitle" Text="Algarve Destino Seguro" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="26" />
+            </Border>
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Background="LightGray" Height="50">
+                <TextBox x:Name="searchbox" Height="40" Width="340" Background="WhiteSmoke" Margin="4,2,2,2" VerticalAlignment="Center" ></TextBox>
+                <Button MinWidth="50" Width="50" Height="50" Background="Transparent" BorderThickness="0" Template="{StaticResource ButtonControlTemplateNoPadding}" >
+                    <Image Source="/Icons/search_2.png"></Image>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+
+
+    <!-- content stack -->
+
+        <StackPanel Background="WhiteSmoke" Grid.Row="1">
+            <ListBox BorderBrush="#8b9dc3" Height="auto" BorderThickness="2" MaxHeight="580" Grid.Row="1" x:Name="listBoxobj" Margin="0,0,0,80">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Background="LightGray" Width="480">
+                            <Border BorderBrush="White" BorderThickness="1">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Image Source="{Binding img}" Height="75" Width="75" HorizontalAlignment="Left"/>
+                                    <TextBlock Grid.Row="0" x:Name="TituloTxt" TextWrapping="Wrap" Text="{Binding descricao}" FontSize="28" Margin="75,0,35,0"/>
+                                 </Grid>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+    </Grid>
+</Page>
